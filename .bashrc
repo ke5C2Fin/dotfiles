@@ -3,14 +3,17 @@
 
 [[ $- != *i* ]] && return
 
+# if using git uncomment
+#source /usr/share/git/completion/git-completion.bash
+#source ~/.git-prompt.sh
+#export PS1='\[\033[0;37m\][\[\033[1;37m\]\W\[\033[0;37m\]]$\[\033[00m\]$(__git_ps1 " (%s)") '
+
 # Prompt
-source ~/.git-prompt.sh
-export PS1='\[\033[0;37m\][\[\033[1;37m\]\W\[\033[0;37m\]]$\[\033[00m\]$(__git_ps1 " (%s)") '
+export PS1='\[\033[0;37m\][\[\033[1;37m\]\W\[\033[0;37m\]]$\[\033[00m\] '
 
 # Completion
 complete -cf sudo
 complete -cf man
-source /usr/share/git/completion/git-completion.bash
 
 # Aliases
 alias ls='ls --color=auto --group-directories-first'
