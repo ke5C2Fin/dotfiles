@@ -4,7 +4,8 @@
 [[ $- != *i* ]] && return
 
 # Prompt
-export PS1='\[\033[0;37m\][\[\033[1;37m\]\W\[\033[0;37m\]]$\[\033[00m\] '
+source ~/.git-prompt.sh
+export PS1='\[\033[0;37m\][\[\033[1;37m\]\W\[\033[0;37m\]]$\[\033[00m\]$(__git_ps1 " (%s)") '
 
 # Completion
 complete -cf sudo
