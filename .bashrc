@@ -9,6 +9,7 @@ export PS1='\[\033[0;37m\][\[\033[1;37m\]\W\[\033[0;37m\]]$\[\033[00m\] '
 # Completion
 complete -cf sudo
 complete -cf man
+source /usr/share/git/completion/git-completion.bash
 
 # Aliases
 alias ls='ls --color=auto --group-directories-first'
@@ -28,6 +29,5 @@ alias shutdown='shutdown -Ph now'
 alias gz='tar -zxvf'
 alias bz2='tar -xjvf'
 
-alias wicd='wicd-curses'
-#alias mpvid='mplayer -fs -zoom -vo fbdev -vf dsize=1024:600:0,scale'
+alias mpvid='mplayer -fs -zoom -vo fbdev -vf dsize=1024:600:0,scale'
 alias crawl='ssh -C -l joshua crawl.akrasiac.org' #password joshua
