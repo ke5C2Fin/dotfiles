@@ -29,6 +29,7 @@ alias mkdir='mkdir -p'
 alias shutdown='shutdown -Ph now'
 alias gz='tar -zxvf'
 alias bz2='tar -xjvf'
+alias git='hub'
 
 alias mpvid='mplayer -fs -zoom -vo fbdev -vf dsize=1024:600:0,scale'
 alias crawl='ssh -C -l joshua crawl.akrasiac.org' #password joshua
