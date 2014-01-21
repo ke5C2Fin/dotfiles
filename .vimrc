@@ -6,9 +6,9 @@ colorscheme elflord
 
 " tab settings
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+"set tabstop=4
+"set softtabstop=4
+"set shiftwidth=4
 set smartindent
 
 " search settings
@@ -16,12 +16,17 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-set backspace=indent,eol,start
 set history=50
 
 set number
 set ruler
 set nocompatible
+set ttyfast
+set backspace=indent,eol,start
+"set colorcolumn=81
+call matchadd('ColorColumn', '\%81v', 100)
+
+noremap ; :
 
 map <C-z> <Nop>
 
