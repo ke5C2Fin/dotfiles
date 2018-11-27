@@ -9,13 +9,6 @@ vnoremap <left> <nop>
 vnoremap <right> <nop>
 " B-A-<start>
 
-
-"" Make :w , :q , and :wq to be not case sensitive
-"command WQ wq
-"command Wq wq
-"command W w
-"command Q q
-
 " Remove bold fonts?
 set t_md=
 
@@ -26,7 +19,7 @@ nnoremap K <nop>
 
 " Show tab chars and trailing spaces
 set list
-set listchars=tab:>-,trail:-
+"set listchars=tab:>-,trail:-
 
 " Extra Files
 set nobackup
@@ -39,9 +32,6 @@ set linebreak
 " Syntax Highlighting
 syntax enable
 colorscheme newcolor
-
-" For easier copy and paste between vim and the system
-"set clipboard=unnamed
 
 " Tab settings
 set expandtab
@@ -79,38 +69,4 @@ set ttyfast
 " Highlight the 80st column if used
 "set colorcolumn=80
 "call matchadd('ColorColumn', '\%80v', 100)
-
-"set cursorcolumn
-"set cursorline
-
-
-" split windows to below and the right
-"set splitbelow
-"set splitright
-
-" Allow ; to work as : for command line
-"noremap ; :
-
-" C-HJKL navigate to split window and _ maximize
-"noremap <C-H> <C-W><C-H>
-"noremap <C-J> <C-W><C-J>
-"noremap <C-K> <C-W><C-K>
-"noremap <C-L> <C-W><C-L>
-"map <C-J> <C-W>j<C-W>_
-"map <C-K> <C-W>k<C-W>_
-"map <C-H> <C-W>h<C-W>_
-"map <C-L> <C-W>l<C-W>_
-
-" Free up my command prefix for tmux
-"map <C-z> <Nop>
-
-" set leader '\' W to sudo save file
-"noremap <Leader>W :w sudo tee % > /dev/null
-
-" j and k move linewise
-"nmap j gj
-"nmap k gk
-
-" Yank to EOL
-"nnoremap Y y$
 
