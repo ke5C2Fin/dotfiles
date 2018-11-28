@@ -18,7 +18,7 @@ nnoremap K <nop>
 "nnoremap <F1> <nop>
 
 " Show tab chars and trailing spaces
-set list
+"set list
 "set listchars=tab:>-,trail:-
 
 " Extra Files
