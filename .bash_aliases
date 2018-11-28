@@ -1,5 +1,11 @@
-ext ()
-{
+alias cp='cp -i'
+alias rm='rm -i'
+alias mv='mv -i'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+ext () {
   if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2)   tar xjf $1   ;;
@@ -19,3 +25,7 @@ ext ()
     echo "'$1' is not a valid file"
   fi
 }
+
+#alias mpvid='mplayer -fs -zoom -vo fbdev -vf dsize=1366:768:0,scale'
+alias crawl='ssh -C -l joshua crawl.akrasiac.org' #password joshua
+
