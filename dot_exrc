@@ -1,0 +1,20 @@
+" Show line numbers
+set number
+" Show cursor position
+set ruler
+" Show matching brackets
+set showmatch
+" Show current mode
+set showmode
+" Enable autoindentation
+set autoindent
+" Ignore case for search
+set ignorecase
+" Show search match
+set showmatch
+" Wrap search through the document
+set wrapscan
+
+"set shiftwidth=8
+"set tabstop=8
+

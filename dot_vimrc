@@ -31,42 +31,41 @@ set linebreak
 
 " Syntax Highlighting
 syntax enable
-colorscheme newcolor
+colorscheme plaintheme
 
 " Tab settings
 set expandtab
-set smartindent
+set cindent
+"set autoindent
+"set smartindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set backspace=indent,eol,start
 
-" set ai et ts=2 sw=2 sts=2
+" set ai si et ts=2 sw=2 sts=2 et
 " :echo getcompletion('', 'filetype')
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType c,h setlocal tabstop=8 shiftwidth=8 softtabstop=8
+autocmd FileType html setlocal ts=4 sw=4 sts=4 sr noexpandtab
 
 " Search Settings
 "set ignorecase
 "set smartcase
-set incsearch
-set hlsearch
-set history=50
+"set incsearch
+"set hlsearch
 
 " Line numbering
-" turn on line numbering
 set number
-" make line numbers relative to current position
 "set relativenumber
 
 " Misc settings
 "set nocompatible
-set wmh=0
+"set winminheight=0
 set ruler
 set ttyfast
 
 " Highlight the 80st column if used
 "set colorcolumn=80
-"call matchadd('ColorColumn', '\%80v', 100)
 
