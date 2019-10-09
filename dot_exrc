@@ -15,6 +15,3 @@ set showmatch
 " Wrap search through the document
 set wrapscan
 
-"set shiftwidth=8
-"set tabstop=8
-
