@@ -26,15 +26,15 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
+export PATH
+
 # Prompt
 PS1='\[\033[0;37m\][\[\033[1;32m\]\W\[\033[0;37m\]]$\[\033[00m\] '
 export PS1
 
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 #export VAGRANT_DISABLE_VBOXSYMLINKCREATE="1"
-PATH="$PATH:$HOME/bin"
-PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
-export PATH
 
 # git
 #source /usr/share/git/completion/git-completion.bash
@@ -42,11 +42,11 @@ export PATH
 #PS1='\[\033[0;37m\][\[\033[1;37m\]\W\[\033[0;37m\]]$\[\033[00m\]$(__git_ps1 " (%s)") '
 
 # Exports
-export EDITOR=vim
+export EDITOR=vi
 export PAGER=less
 export WINEPREFIX=$HOME/.wine
 export WINEARCH=win32
-export HISTCONTROL=ignoredups:erasedups
+export HISTCONTROL=ignoreboth:erasedups
 #export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 umask 0027
