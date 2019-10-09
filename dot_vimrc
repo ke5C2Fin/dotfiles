@@ -53,7 +53,7 @@ set number
 
 " Misc settings
 "set winminheight=0
-set compatible
+"set compatible
 set ruler
 set ttyfast
 
