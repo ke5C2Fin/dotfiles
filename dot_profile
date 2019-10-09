@@ -1,9 +1,7 @@
 # ~/.profile: executed by Bourne-compatible login shells.
 
 if [ "$BASH" ]; then
-  if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-  fi
+    [ -f ~/.bashrc ] && . ~/.bashrc
 fi
 
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
@@ -12,5 +10,23 @@ PATH="$PATH:$HOME/bin"
 PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
 export PATH
 
-umask 0022
+# git
+#source /usr/share/git/completion/git-completion.bash
+#source ~/.git-prompt.sh
+#PS1='\[\033[0;37m\][\[\033[1;37m\]\W\[\033[0;37m\]]$\[\033[00m\]$(__git_ps1 " (%s)") '
+
+# Prompt
+PS1='\[\033[0;37m\][\[\033[1;32m\]\W\[\033[0;37m\]]$\[\033[00m\] '
+export PS1
+
+# Exports
+export EDITOR=vim
+export PAGER=less
+export WINEPREFIX=$HOME/.wine
+export WINEARCH=win32
+export HISTCONTROL=ignoredups:erasedups
+#export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+umask 0027
 mesg n || true
+
