@@ -9,17 +9,13 @@ vnoremap <left> <nop>
 vnoremap <right> <nop>
 " B-A-<start>
 
-" Remove bold fonts?
+" Unset bold fonts
 set t_md=
 
 " Annoying Keys
 nnoremap Q <nop>
 nnoremap K <nop>
 "nnoremap <F1> <nop>
-
-" Show tab chars and trailing spaces
-"set list
-"set listchars=tab:>-,trail:-
 
 " Extra Files
 set nobackup
@@ -51,22 +47,25 @@ autocmd FileType python setlocal ts=4 sw=4 sts=4
 autocmd FileType c,h setlocal ts=8 sw=8 sts=8
 autocmd FileType make setlocal ts=8 sw=8 sts=8 noet
 
-" Search Settings
-"set ignorecase
-"set smartcase
-"set incsearch
-"set hlsearch
-
 " Line numbering
 set number
 "set relativenumber
 
 " Misc settings
-"set nocompatible
 "set winminheight=0
+set compatible
 set ruler
 set ttyfast
+
+" Show tab chars and trailing spaces
+"set list
+"set listchars=tab:>-,trail:-
 
 " Highlight the 80st column if used
 "set colorcolumn=80
 
+" Search Settings
+"set ignorecase
+"set smartcase
+"set incsearch
+"set hlsearch
