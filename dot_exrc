@@ -1,13 +1,7 @@
-" Show line numbers
-set number
-" Show cursor position
 set ruler
-" Show matching brackets
-set showmatch
-" Show current mode
+set number
 set showmode
-" Enable autoindentation
+set showmatch
 set autoindent
-" Ignore case for search
 set ignorecase
 
