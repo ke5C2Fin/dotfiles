@@ -10,6 +10,4 @@ set showmode
 set autoindent
 " Ignore case for search
 set ignorecase
-" Wrap search through the document
-set wrapscan
 
