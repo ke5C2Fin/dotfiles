@@ -27,7 +27,7 @@ set linebreak
 
 " Syntax Highlighting
 syntax enable
-colorscheme plaintheme
+colorscheme newtheme
 
 " Tab settings
 set expandtab
