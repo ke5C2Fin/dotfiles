@@ -10,3 +10,4 @@ shopt -s histappend
 complete -cf sudo
 complete -cf man
 
+alias nmap='"/mnt/c/Program Files (x86)/Nmap/nmap.exe"'

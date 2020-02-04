@@ -15,9 +15,10 @@ alias mkdir='mkdir -p'
 alias shutdown='shutdown -Ph now'
 alias gz='tar -zxvf'
 alias bz2='tar -xjvf'
+alias gg="git add *; git commit -m a; git push"
 
 #alias mpvid='mplayer -fs -zoom -vo fbdev -vf dsize=1024:600:0,scale'
-alias crawl='ssh -C -l joshua crawl.akrasiac.org' #password joshua
+alias crawl='ssh -C -l joshua crawl.akrasiac.org'
 
 rftg() {
     cd /home/name/.wine/drive_c/Program\ Files/rftg/
@@ -45,4 +46,3 @@ ext() {
     echo "'$1' is not a valid file"
   fi
 }
-
