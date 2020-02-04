@@ -48,6 +48,7 @@ export WINEPREFIX=$HOME/.wine
 export WINEARCH=win32
 export HISTCONTROL=ignoreboth:erasedups
 export DISPLAY=localhost:0.0
+export GOPATH=$HOME/go
 #export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 umask 0027
