@@ -1,4 +1,4 @@
-# ~/.bashrc -> ~/.bash_profile
+# ~/.bashrc
 
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
