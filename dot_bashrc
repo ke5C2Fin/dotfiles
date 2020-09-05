@@ -38,4 +38,7 @@ complete -cf man
 
 #alias nmap='"/mnt/c/Program Files (x86)/Nmap/nmap.exe"'
 
+export GOPATH="$HOME/go"
+export PATH="$PATH:${GOPATH//://bin:}/bin"
+
 mesg n || true
