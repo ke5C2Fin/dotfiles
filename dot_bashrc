@@ -1,44 +1,50 @@
-# ~/.bashrc
+# ~/.bashrc, ~/.bash_profile
 
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
 
-# set PATH so it includes user's private bin if it exists
+#[ -f /etc/bashrc ] && . /etc/bashrc
+
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
-# set PATH so it includes user's private bin if it exists
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+#[ -d "$HOME/go" ] && GOPATH="$HOME/go" && export GOPATH
+#PATH="$PATH:${GOPATH//://bin:}/bin"
 export PATH
 
-# Prompt
-PS1='\[\033[0;37m\][\[\033[1;32m\]\W\[\033[0;37m\]]$\[\033[00m\] '
+alias gg='git add *; git commit -m "gg"; git push'
+parse_git_branch() {
+    git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+PS1="\u@\h \W \$(parse_git_branch)\\$ "
 export PS1
 
-# git
-#source /usr/share/git/completion/git-completion.bash
-#source ~/.git-prompt.sh
-#PS1='\[\033[0;37m\][\[\033[1;37m\]\W\[\033[0;37m\]]$\[\033[00m\]$(__git_ps1 " (%s)") '
+alias kshowns='kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -n'
+if kubectl >/dev/null 2>&1; then
+    . <(kubectl completion bash)
+    alias k=kubectl
+    complete -F __start_kubectl k
+fi
 
-# Exports
-export EDITOR=vi
-export PAGER=less
-export HISTCONTROL=ignoreboth:erasedups
-#export GOPATH=$HOME/go
+if terraform >/dev/null; then
+    complete -C /usr/bin/terraform terraform
+fi
+
+complete -cf sudo
+complete -cf man
+
+EDITOR=vi && export EDITOR
+PAGER=less && export PAGER
+HISTCONTROL=ignoreboth:erasedups && export HISTCONTROL
+
+shopt -s histappend
 
 umask 0027
 
 #[[ -z "$TMUX" ]] && exec tmux
-
-[ -e ~/.bash_aliases ] && . ~/.bash_aliases
-
-shopt -s histappend
-
-# Completion
-complete -cf sudo
-complete -cf man
-
 #alias nmap='"/mnt/c/Program Files (x86)/Nmap/nmap.exe"'
 
-export GOPATH="$HOME/go"
-export PATH="$PATH:${GOPATH//://bin:}/bin"
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[ -f ~/.bash_site ] && . ~/.bash_site
 
 mesg n || true

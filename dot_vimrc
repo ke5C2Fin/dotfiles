@@ -18,7 +18,9 @@ nnoremap K <nop>
 "nnoremap <F1> <nop>
 
 " Extra Files
+set viminfo=
 set nobackup
+set nowritebackup
 set noswapfile
 
 " Word Wrap
@@ -42,7 +44,9 @@ set shiftwidth=4
 " set ai si et ts=2 sw=2 sts=2
 " set autoindent smartindent expandtab tabstop=2 shiftwidth=2 softtabstop=2
 " :echo getcompletion('', 'filetype')
-autocmd FileType yaml,html,tf setlocal ts=2 sw=2 sts=2
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
+au! BufNewFile,BufReadPost *.pp set filetype=puppet
+autocmd FileType yaml,html,tf,puppet setlocal ts=2 sw=2 sts=2
 autocmd FileType python setlocal ts=4 sw=4 sts=4
 "autocmd FileType c setlocal ts=8 sw=8 sts=8
 autocmd FileType make setlocal ts=8 sw=8 sts=8 noet
@@ -56,6 +60,8 @@ set number
 "set compatible
 set ruler
 set ttyfast
+set showmode
+set showcmd
 
 " Show tab chars and trailing spaces
 "set list
