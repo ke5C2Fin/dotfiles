@@ -1,23 +1,20 @@
-# ~/.bashrc, ~/.bash_profile
+# ~/.bashrc
 
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
 
 #[ -f /etc/bashrc ] && . /etc/bashrc
 
-[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
-[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
-#[ -d "$HOME/go" ] && GOPATH="$HOME/go" && export GOPATH
-#PATH="$PATH:${GOPATH//://bin:}/bin"
-export PATH
+#[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+#[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+##[ -d "$HOME/go" ] && GOPATH="$HOME/go" && export GOPATH
+##PATH="$PATH:${GOPATH//://bin:}/bin"
+#export PATH
 
 alias gg='git add *; git commit -m "gg"; git push'
 parse_git_branch() {
     git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
-
-PS1="\u@\h \W \$(parse_git_branch)\\$ "
-export PS1
 
 alias kshowns='kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -n'
 if kubectl >/dev/null 2>&1; then
@@ -31,7 +28,9 @@ if terraform >/dev/null; then
 fi
 
 complete -cf sudo
-complete -cf man
+complete -c man which
+
+PS1="\u@\h \W \$(parse_git_branch)\\$ "
 
 EDITOR=vi && export EDITOR
 PAGER=less && export PAGER

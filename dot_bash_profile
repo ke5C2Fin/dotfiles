@@ -1,1 +1,10 @@
-dot_bashrc
+# ~/.bash_profile
+
+test -f "$HOME/.bashrc" && . "$HOME/.bashrc"
+
+[ -d "$HOME/go" ] && GOPATH="$HOME/go"
+export GOPATH
+
+PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
+PATH="$GOPATH/bin:$PATH"
+export PATH
