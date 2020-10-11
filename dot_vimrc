@@ -17,7 +17,7 @@ nnoremap Q <nop>
 nnoremap K <nop>
 "nnoremap <F1> <nop>
 
-" Extra Files
+" No Extra Files
 set viminfo=
 set nobackup
 set nowritebackup
