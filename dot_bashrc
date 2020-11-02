@@ -17,6 +17,10 @@ if kubectl >/dev/null 2>&1; then
     complete -F __start_kubectl k
 fi
 
+if helm >/dev/null 2>&1; then
+    . <(helm completion bash)
+fi
+
 if terraform >/dev/null; then
     complete -C /usr/bin/terraform terraform
 fi
