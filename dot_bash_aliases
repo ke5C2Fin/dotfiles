@@ -1,4 +1,3 @@
-#alias vim='nvim'
 alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -lA'
 alias la='ls -A'
@@ -15,9 +14,9 @@ alias mkdir='mkdir -p'
 alias shutdown='shutdown -Ph now'
 alias gz='tar -zxvf'
 alias bz2='tar -xjvf'
-alias gg="git add *; git commit -m a; git push"
+alias gg="git add *; git commit -m gg; git push"
 
-#alias mpvid='mplayer -fs -zoom -vo fbdev -vf dsize=1024:600:0,scale'
+alias mpvid='mplayer -fs -zoom -vo fbdev -vf dsize=1024:600:0,scale'
 alias crawl='ssh -C -l joshua crawl.akrasiac.org'
 
 rftg() {

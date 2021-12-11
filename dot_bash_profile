@@ -2,7 +2,7 @@
 
 test -f "$HOME/.bashrc" && . "$HOME/.bashrc"
 
-[ -d "$HOME/go" ] && GOPATH="$HOME/go"
+test -d "$HOME/go" && GOPATH="$HOME/go"
 export GOPATH
 
 PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"

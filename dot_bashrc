@@ -3,9 +3,9 @@
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
 
-#[ -f /etc/bashrc ] && . /etc/bashrc
+#test -f /etc/bashrc && . /etc/bashrc
 
-alias gg='git add *; git commit -m "gg"; git push'
+alias gg='git add *; git commit -m gg; git push'
 parse_git_branch() {
     git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
@@ -41,7 +41,7 @@ umask 0027
 #[[ -z "$TMUX" ]] && exec tmux
 #alias nmap='"/mnt/c/Program Files (x86)/Nmap/nmap.exe"'
 
-[ -f ~/.bash_aliases ] && . ~/.bash_aliases
-[ -f ~/.bash_site ] && . ~/.bash_site
+test -f ~/.bash_aliases && . ~/.bash_aliases
+test -f ~/.bash_site && . ~/.bash_site
 
 mesg n || true
