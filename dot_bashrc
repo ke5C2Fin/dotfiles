@@ -40,7 +40,6 @@ shopt -s histappend
 umask 0027
 
 #[[ -z "$TMUX" ]] && exec tmux
-#alias nmap='"/mnt/c/Program Files (x86)/Nmap/nmap.exe"'
 
 test -f ~/.bash_aliases && . ~/.bash_aliases
 test -f ~/.bash_site && . ~/.bash_site
