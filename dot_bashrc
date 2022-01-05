@@ -3,36 +3,37 @@
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
 
-#test -f /etc/bashrc && . /etc/bashrc
+test -f /etc/bashrc && . /etc/bashrc
 
-alias gg='git add *; git commit -m gg; git push'
-parse_git_branch() {
-    git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
+if git >/dev/null 2>&1; then
+    alias gg='git add *; git commit -m "gg"; git push'
+    parse_git_branch() {
+        git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+    }
+fi
 
-alias kshowns='kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -n'
 if kubectl >/dev/null 2>&1; then
     . <(kubectl completion bash)
     alias k=kubectl
     complete -F __start_kubectl k
+    alias kshowns='kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -n'
 fi
 
 if helm >/dev/null 2>&1; then
     . <(helm completion bash)
 fi
 
-if terraform >/dev/null; then
-    complete -C /usr/bin/terraform terraform
-fi
+test -x /usr/bin/terraform && complete -C /usr/bin/terraform terraform
+test -x /usr/bin/packer && complete -C /usr/bin/packer packer
 
 complete -cf sudo
 complete -c man which
 
 PS1="\u@\h \W \$(parse_git_branch)\\$ "
 
-EDITOR=vi && export EDITOR
-PAGER=less && export PAGER
-HISTCONTROL=ignoreboth:erasedups && export HISTCONTROL
+EDITOR=vi
+PAGER=less
+HISTCONTROL=ignoreboth:erasedups
 
 shopt -s histappend
 
