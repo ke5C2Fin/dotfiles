@@ -18,6 +18,7 @@ alias gg="git add *; git commit -m gg; git push"
 
 alias mpvid='mplayer -fs -zoom -vo fbdev -vf dsize=1024:600:0,scale'
 alias crawl='ssh -C -l joshua crawl.akrasiac.org'
+#alias nmap='"/mnt/c/Program Files (x86)/Nmap/nmap.exe"'
 
 rftg() {
     cd /home/name/.wine/drive_c/Program\ Files/rftg/
