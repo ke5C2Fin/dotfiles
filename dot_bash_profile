@@ -1,7 +1,7 @@
 # ~/.bash_profile
 
-test -f "$HOME/.bashrc" && . "$HOME/.bashrc"
-test -d "$HOME/go" && GOPATH="$HOME/go" && export GOPATH
+[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
+[ -d "$HOME/go" ] && GOPATH="$HOME/go" && export GOPATH
 
 PATH="$GOPATH/bin:$PATH"
 PATH="$HOME/.local/bin:$HOME/bin:$GOPATH/bin:/usr/local/bin:$PATH"

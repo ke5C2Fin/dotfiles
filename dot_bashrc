@@ -3,7 +3,7 @@
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
 
-test -f /etc/bashrc && . /etc/bashrc
+[ -f /etc/bashrc ] && . /etc/bashrc
 
 if git >/dev/null 2>&1; then
     alias gg='git add *; git commit -m "gg"; git push'
@@ -23,8 +23,8 @@ if helm >/dev/null 2>&1; then
     . <(helm completion bash)
 fi
 
-test -x /usr/bin/terraform && complete -C /usr/bin/terraform terraform
-test -x /usr/bin/packer && complete -C /usr/bin/packer packer
+[ -x /usr/bin/terraform ] && complete -C /usr/bin/terraform terraform
+[ -x /usr/bin/packer ] && complete -C /usr/bin/packer packer
 
 complete -cf sudo
 complete -c man which
@@ -41,7 +41,7 @@ umask 0027
 
 #[[ -z "$TMUX" ]] && exec tmux
 
-test -f ~/.bash_aliases && . ~/.bash_aliases
-test -f ~/.bash_site && . ~/.bash_site
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[ -f ~/.bash_site ] && . ~/.bash_site
 
 mesg n || true
