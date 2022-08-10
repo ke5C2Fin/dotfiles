@@ -1,0 +1,4 @@
+HISTCONTROL=ignoredups:ignorespaces && export HISTCONTROL
+HISTFILE=$HOME/.sh_history && export HISTFILE
+HISTSIZE=999999 && export HISTSIZE
+ENV=$HOME/.kshrc && export ENV
