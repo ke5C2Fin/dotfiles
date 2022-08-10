@@ -8,7 +8,7 @@
 if git >/dev/null 2>&1; then
     alias gg='git add *; git commit -m "gg"; git push'
     parse_git_branch() {
-        git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+        git branch 2>/dev/null | sed -n 's/^\* \(.*\)/(\1)/p'
     }
 fi
 
