@@ -4,6 +4,8 @@ set t_md=
 " Annoying Keys
 nnoremap Q <nop>
 nnoremap K <nop>
+map <C-a> <Nop>
+map <C-x> <Nop>
 
 " No Extra Files
 set viminfo=
