@@ -6,9 +6,13 @@
 [ -f /etc/bashrc ] && . /etc/bashrc
 
 if git >/dev/null 2>&1; then
-    alias gg='git add *; git commit -m "gg"; git push'
+    gg() {
+	    git add ./*
+	    git commit -m "${*:-gg}" &&
+	    git push || { git pull -r && git push; }
+    }
     parse_git_branch() {
-        git branch 2>/dev/null | sed -n 's/^\* \(.*\)/(\1)/p'
+	    git branch 2>/dev/null | sed -n 's/^\* \(.*\)/(\1)/p'
     }
 fi
 
