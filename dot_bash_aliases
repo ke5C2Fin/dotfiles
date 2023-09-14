@@ -12,16 +12,6 @@ alias mpvid='mplayer -fs -zoom -vo fbdev -vf dsize=1024:600:0,scale'
 alias crawl='ssh -C -l joshua crawl.akrasiac.org'
 #alias nmap='"/mnt/c/Program Files (x86)/Nmap/nmap.exe"'
 
-gg() {
-	git add ./*
-	git commit -m "${*:-a}" &&
-	git push || { git pull -r && git push; }
-}
-
-parse_git_branch() {
-	git branch 2>/dev/null | sed -n 's/^\* \(.*\)/(\1)/p'
-}
-
 rftg() {
     cd /home/name/.wine/drive_c/Program\ Files/rftg/
     wine rftg.exe &
