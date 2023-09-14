@@ -3,22 +3,24 @@ alias ll='ls -lA'
 alias la='ls -A'
 alias lr='ls -R'
 alias grep='grep --color=auto'
-alias df='df -Th'
-alias cp='cp -i'
-alias rm='rm -i'
-alias mv='mv -i'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias mkdir='mkdir -p'
 alias shutdown='shutdown -Ph now'
-alias gz='tar -zxvf'
-alias bz2='tar -xjvf'
-alias gg="git add *; git commit -m gg; git push"
 
 alias mpvid='mplayer -fs -zoom -vo fbdev -vf dsize=1024:600:0,scale'
 alias crawl='ssh -C -l joshua crawl.akrasiac.org'
 #alias nmap='"/mnt/c/Program Files (x86)/Nmap/nmap.exe"'
+
+gg() {
+	git add ./*
+	git commit -m "${*:-a}" &&
+	git push || { git pull -r && git push; }
+}
+
+parse_git_branch() {
+	git branch 2>/dev/null | sed -n 's/^\* \(.*\)/(\1)/p'
+}
 
 rftg() {
     cd /home/name/.wine/drive_c/Program\ Files/rftg/
