@@ -48,8 +48,7 @@ au! BufNewFile,BufReadPost *.hcl set filetype=hcl2
 au! BufNewFile,BufReadPost *.tf set filetype=tf
 au! BufNewFile,BufReadPost *.h set filetype=c
 autocmd FileType python setlocal ts=4 sw=4 sts=4 et
-autocmd FileType c setlocal ts=8 sw=8 sts=8 noet
-autocmd FileType make setlocal ts=8 sw=8 sts=8 noet
+autocmd FileType c,make setlocal ts=8 sw=8 sts=8 noet
 autocmd FileType yaml,html,tf,hcl2,puppet setlocal sw=2 sts=2 ts=2 et
 
 "set winminheight=0
