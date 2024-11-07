@@ -1,0 +1,3 @@
+_SSH_HOSTS=$(test -f ~/.ssh/known_hosts && awk -F'[ ,]' '$1 !~ /^[0-9]/ { print $1 }' ~/.ssh/known_hosts)
+set -A complete_scp -- $_SSH_HOSTS
+set -A complete_ssh -- $_SSH_HOSTS
