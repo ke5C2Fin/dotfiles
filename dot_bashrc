@@ -5,6 +5,9 @@
 
 [ -f /etc/bashrc ] && . /etc/bashrc
 
+stty -ixon # disable ctrl-s
+set -o ignoreeof # don't exit on ctrl-d
+
 if git >/dev/null 2>&1; then
     gg() {
 	    git add ./*
@@ -34,6 +37,8 @@ complete -cf sudo
 complete -c man which
 
 PS1="\u@\h \W \$(parse_git_branch)\\$ "
+
+GPG_TTY=$(tty)
 
 EDITOR=vi
 PAGER=less
