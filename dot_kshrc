@@ -1,7 +1,17 @@
-parse_git_branch() {
-	git branch 2>/dev/null | sed -n 's/^\* \(.*\)/(\1)/p'
+stty -ixon # disable ctrl-s
+set -o ignoreeof # don't exit on ctrl-d
+
+test -f ~/.oksh_completions && . ~/.oksh_completions
+
+alias TM='test -z $TMUX && { tmux has-session -t kevin && tmux attach -t kevin || tmux new -s kevin; }'
+
+function gg {
+        git add .
+        git commit -m "${*:-kh}" &&
+        git push || { git pull -r && git push; }
+}
+function parse_git_branch {
+        git branch 2>/dev/null | sed -n 's/^\* \(.*\)/(\1)/p'
 }
 
 PS1='\u@\h \W $(parse_git_branch)\$ '
-
-alias ls='ls --color=always'
