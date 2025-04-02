@@ -10,7 +10,7 @@ set -o ignoreeof # don't exit on ctrl-d
 
 if git >/dev/null 2>&1; then
     gg() {
-	    git add ./*
+	    git add .
 	    git commit -m "${*:-gg}" &&
 	    git push || { git pull -r && git push; }
     }
