@@ -36,7 +36,7 @@ fi
 complete -cf sudo
 complete -c man which
 
-PS1="\u@\h \W \$(parse_git_branch)\\$ "
+PS1='\u@\h \W $(parse_git_branch)\$ '
 
 GPG_TTY=$(tty)
 
